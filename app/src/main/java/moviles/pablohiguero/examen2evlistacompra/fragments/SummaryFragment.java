@@ -26,7 +26,7 @@ import moviles.pablohiguero.examen2evlistacompra.utils.Utils;
 public class SummaryFragment extends Fragment {
 
     private RecyclerView recycler;
-    private TextView tvTotal, tvSummaryStore, tvCountProducts, tvCountUnits;
+    private TextView tvTotal, tvSummaryStore, tvCountProducts, tvCountUnits, tvEmptySummary;
     private Button btnShare, btnClear;
     private Realm realm;
     private ItemAdapter adapter;
@@ -56,6 +56,7 @@ public class SummaryFragment extends Fragment {
         tvTotal = view.findViewById(R.id.tvSummaryTotal);
         tvCountProducts = view.findViewById(R.id.tvCountProducts);
         tvCountUnits = view.findViewById(R.id.tvCountUnits);
+        tvEmptySummary = view.findViewById(R.id.tvEmptySummary);
         btnShare = view.findViewById(R.id.btnShare);
         btnClear = view.findViewById(R.id.btnClear);
 
@@ -140,6 +141,13 @@ public class SummaryFragment extends Fragment {
                     adapter.notifyItemChanged(position); // Actualizar color de esta fila
                 }
             });
+            if (selectedItems.isEmpty()) {
+                tvEmptySummary.setVisibility(View.VISIBLE);
+                recycler.setVisibility(View.GONE);
+            } else {
+                tvEmptySummary.setVisibility(View.GONE);
+                recycler.setVisibility(View.VISIBLE);
+            }
             recycler.setAdapter(adapter);
 
             // Calcular Totales

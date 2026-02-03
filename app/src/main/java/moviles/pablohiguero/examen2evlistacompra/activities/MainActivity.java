@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
-        // 1. EVENTO CLICK EN BARRA INFERIOR -> CAMBIA PAGINA
+        // 1. EVENTO< CLICK EN BARRA INFERIOR -> CAMBIA PAGINA
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 2. EVENTO SWIPE (DESLIZAR) -> CAMBIA SELECCIÓN BARRA
+        // 2. EVENTO SWIPE (DESLIZAR)
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

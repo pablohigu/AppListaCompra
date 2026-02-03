@@ -187,6 +187,32 @@
                     android:paddingVertical="12dp"/>
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvSummaryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Productos con cantidad"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"/>
+
+            <TextView
+                android:id="@+id/tvEmptySummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:padding="24dp"
+                android:background="@drawable/bg_active_label"
+                android:backgroundTint="@color/selectedItem"
+                android:text="No hay productos con cantidad"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerSummary"
                 android:layout_width="match_parent"
