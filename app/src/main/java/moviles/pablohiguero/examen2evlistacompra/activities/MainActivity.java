@@ -1,4 +1,4 @@
-package moviles.pablohiguero.examen2evlistacompra;
+package moviles.pablohiguero.examen2evlistacompra.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import moviles.pablohiguero.examen2evlistacompra.R;
 import moviles.pablohiguero.examen2evlistacompra.fragments.ShoppingListFragment;
 import moviles.pablohiguero.examen2evlistacompra.fragments.StoresFragment;
 import moviles.pablohiguero.examen2evlistacompra.fragments.SummaryFragment;

@@ -6,9 +6,8 @@ public class Item extends RealmObject {
     private String category;
     private double price;
     private int quantity;
-    private boolean purchased; // Para el estado "marcado" en el carrito
+    private boolean purchased;
 
-    // Constructor vacío obligatorio para Realm
     public Item() {
     }
 

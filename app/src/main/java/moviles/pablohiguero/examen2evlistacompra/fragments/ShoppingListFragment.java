@@ -25,7 +25,6 @@ public class ShoppingListFragment extends Fragment {
     private ItemAdapter adapter;
     private Store activeStore;
 
-    // Listener para detectar cambios (ej: cambio de tienda activa en otro fragment)
     private final RealmChangeListener<Realm> realmListener = new RealmChangeListener<Realm>() {
         @Override
         public void onChange(Realm realm) {
@@ -77,7 +76,7 @@ public class ShoppingListFragment extends Fragment {
                         if (item.getQuantity() > 0) {
                             item.setQuantity(item.getQuantity() - 1);
 
-                            // REGLA DE ORO: Si baja a 0, deja de estar "comprado"
+                            // Si baja a 0, deja de estar "comprado"
                             if (item.getQuantity() == 0) {
                                 item.setPurchased(false);
                             }
@@ -88,8 +87,7 @@ public class ShoppingListFragment extends Fragment {
 
                 @Override
                 public void onItemClick(Item item, int position) {
-                    // En la lista general no solemos marcar items, solo en el resumen.
-                    // Pero si quisieras editar detalle, sería aquí.
+                    // En la lista general no marco items, solo en el resumen
                 }
             });
             recycler.setAdapter(adapter);

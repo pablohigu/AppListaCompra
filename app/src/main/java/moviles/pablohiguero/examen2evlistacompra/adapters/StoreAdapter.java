@@ -77,11 +77,19 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                 cardView.setCardElevation(2f);
             }
 
-            itemView.setOnClickListener(v -> listener.onItemClick(store, getAdapterPosition()));
+
+            itemView.setOnClickListener(v -> {
+                if (getBindingAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(store, getBindingAdapterPosition());
+                }
+            });
 
             itemView.setOnLongClickListener(v -> {
-                listener.onItemLongClick(store, getAdapterPosition());
-                return true;
+                if (getBindingAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onItemLongClick(store, getBindingAdapterPosition());
+                    return true;
+                }
+                return false;
             });
         }
     }

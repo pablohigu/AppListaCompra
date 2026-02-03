@@ -82,10 +82,11 @@ public class SummaryFragment extends Fragment {
             if (activeStore != null) {
                 List<Item> itemsComprados = activeStore.getItems().where().greaterThan("quantity", 0).findAll();
 
-                if (itemsComprados.isEmpty()) {
-                    Toast.makeText(getContext(), "La lista está vacía", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
+                // if (itemsComprados.isEmpty()) {
+                //    Toast.makeText(getContext(), "La lista está vacía", Toast.LENGTH_SHORT).show();
+                //    return;
+                // }
 
                 String body = Utils.buildShoppingListEmailBody(activeStore, itemsComprados);
 

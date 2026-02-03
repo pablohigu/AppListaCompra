@@ -21,8 +21,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private List<Item> listData;
     private OnItemAction itemListener;
 
-    // Ya no necesitamos 'selectedPosition' porque usamos la BBDD
-
     public interface OnItemAction {
         void onAddClick(Item item, int position);
         void onRemoveClick(Item item, int position);
@@ -52,7 +50,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvCategory, tvPrice, tvQuantity;
+        TextView tvName, tvCategory, tvPrice, tvQuantity, tvPurchasedLabel;
         ImageView btnPlus, btnMinus;
         CardView cardView;
 
@@ -61,6 +59,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             tvName = itemView.findViewById(R.id.tvProductName);
             tvCategory = itemView.findViewById(R.id.tvProductCategory);
             tvPrice = itemView.findViewById(R.id.tvProductPrice);
+            tvPurchasedLabel = itemView.findViewById(R.id.tvPurchasedLabel);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
             btnPlus = itemView.findViewById(R.id.btnPlus);
             btnMinus = itemView.findViewById(R.id.btnMinus);
@@ -81,18 +80,34 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 // MARCADO: Fondo Verdoso suave (Teal)
                 cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.selectedItem));
                 cardView.setCardElevation(0f);
+                tvPurchasedLabel.setVisibility(View.VISIBLE);
                 // Opcional: Poner un check o cambiar texto de color
             } else {
                 // NORMAL: Blanco
                 cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.cardBackground));
                 cardView.setCardElevation(2f);
+                tvPurchasedLabel.setVisibility(View.GONE);
             }
 
-            btnPlus.setOnClickListener(v -> listener.onAddClick(item, getAdapterPosition()));
-            btnMinus.setOnClickListener(v -> listener.onRemoveClick(item, getAdapterPosition()));
+            // Botón Sumar
+            btnPlus.setOnClickListener(v -> {
+                if (getBindingAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onAddClick(item, getBindingAdapterPosition());
+                }
+            });
 
-            // Al hacer click, la lógica de cambiar el estado la hará el Fragment
-            itemView.setOnClickListener(v -> listener.onItemClick(item, getAdapterPosition()));
+
+            btnMinus.setOnClickListener(v -> {
+                if (getBindingAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onRemoveClick(item, getBindingAdapterPosition());
+                }
+            });
+
+            itemView.setOnClickListener(v -> {
+                if (getBindingAdapterPosition() != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(item, getBindingAdapterPosition());
+                }
+            });
         }
     }
 }

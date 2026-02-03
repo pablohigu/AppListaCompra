@@ -56,6 +56,22 @@
                 android:textColor="@color/primaryColor"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPurchasedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="EN EL CARRITO"
+                android:textColor="@color/secondaryColor"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:background="@drawable/bg_active_label"
+                android:backgroundTint="@color/selectedItem"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:visibility="gone"/>
         </LinearLayout>
 
         <LinearLayout
