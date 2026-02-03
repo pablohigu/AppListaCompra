@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Material Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Modern App Palette (Indigo/Emerald Theme) -->
+    <color name="primaryColor">#4F46E5</color>      <!-- Indigo 600 -->
+    <color name="primaryDark">#3730A3</color>       <!-- Indigo 800 -->
+    <color name="primaryLight">#818CF8</color>      <!-- Indigo 400 -->
+    
+    <color name="secondaryColor">#10B981</color>    <!-- Emerald 500 -->
+    <color name="accentColor">#F59E0B</color>       <!-- Amber 500 -->
+    
+    <color name="backgroundColor">#F3F4F6</color>   <!-- Cool Gray 100 -->
+    <color name="surfaceColor">#FFFFFF</color>
+    
+    <color name="textPrimary">#1F2937</color>       <!-- Cool Gray 800 -->
+    <color name="textSecondary">#6B7280</color>     <!-- Cool Gray 500 -->
+    <color name="textOnPrimary">#FFFFFF</color>
+    
+    <color name="deleteColor">#EF4444</color>       <!-- Red 500 -->
+    <color name="cardBackground">#FFFFFF</color>
+    
+    <color name="activeStoreBackground">#E0E7FF</color> <!-- Indigo 100 -->
+    <color name="selectedItem">#EEF2FF</color>      <!-- Indigo 50 -->
+
+    <color name="divider">#E5E7EB</color>
+</resources>
